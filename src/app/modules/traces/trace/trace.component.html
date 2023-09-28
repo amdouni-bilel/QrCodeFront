@@ -1,0 +1,53 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Traces List</h4>
+    <div class="card-header-form">
+      <div class="input-group">
+        <button type="submit" class="btn btn-primary" (click)="exportExcel()">Export To Excel </button>
+        <input type="text" class="form-control"  placeholder="Search"> <!---->
+        <div class="input-group-btn">
+          <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table  id="customers" class="table table-striped" >
+        <tr>
+          <th>ID</th>
+          <th>Employee Username</th>
+          <th>IMEI</th>
+          <th>Project Name</th>
+          <th>Date</th>
+          <th>Maps</th>
+        </tr>
+        <tr *ngFor="let p of traces">
+          <td>{{p.id}}</td>
+          <td>{{p.mobile.person.username || '---'}}</td>
+          <td>{{p.mobile.num || '---'}}</td>
+          <td>{{p.project.nom || '---'}}</td>
+          <td>{{p.date || '---'}}</td>
+          <td> <a  class="open-modal" (click)="afficherCarte(p.latitude, p.longitude)">See the map</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ... Autres éléments de votre modèle ... -->
+
+<!-- Modal pour afficher la carte -->
+<div class="modal" [ngClass]="{'is-active': afficherModal}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Carte géographique</p>
+      <button class="delete" (click)="fermerCarte()"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Ici, affichez votre carte géographique en utilisant latitudeModal et longitudeModal -->
+    </section>
+  </div>
+</div>
+

@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Employees Projects List</h4>
+    <div class="card-header-form">
+      <div class="input-group">
+        <button type="submit" class="btn btn-primary" >Export To Excel </button>
+        <input type="text" class="form-control"  placeholder="Search"> <!---->
+        <div class="input-group-btn">
+          <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table id="customers" class="table table-striped">
+        <tr>
+          <th>ID Employee</th>
+<!--          <th>First Name</th>-->
+<!--          <th>Last Name</th>-->
+          <th>User Name</th>
+<!--          <th>Employee mail</th>-->
+          <th>Project Name</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let p of users">
+          <td>{{ p.id.idperson }}</td>
+<!--          <td>{{ p.persono.nom }}</td>-->
+<!--          <td>{{ p.persono.prenom }}</td>-->
+          <td>{{ p.persono.username }}</td>
+<!--          <td>{{ p.persono.mail }}</td>-->
+          <td>{{ p.projecto.nom }}</td>
+          <td width="170">
+            <button class="btn btn-warning" [routerLink]="['../edit', p.idperson]"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-danger" (click)="deleteusproj(p.projecto.idpro , p.persono.idperson)"><i class="fas fa-trash"></i></button>
+            <button class="btn btn-primary" [routerLink]="['../assign-project-to-employee']"><i class="fas fa-address-card"></i></button>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Edit Employee</h4>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onUpdate()" [formGroup]="updateForm">
+
+      <div class="form-group">
+        <div class="col-md-6 ">
+          <label for="nom">First Name:</label>
+          <input class="form-control" formControlName="nom" id="nom" type="text">
+          <!-- <div *ngIf="f.name.touched && f.name.invalid">
+             <small *ngIf="f.name.errors.required" class="text-danger">*Name is required.</small>
+           </div>-->
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-6 ">
+          <label for="prenom">Last Name :</label>
+          <input class="form-control" formControlName="prenom" id="prenom" type="text">
+          <!-- <div *ngIf="f.detail.touched && f.detail.invalid">
+             <small *ngIf="f.detail.errors.required" class="text-danger">*Detail is required.</small>
+           </div>-->
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-6 ">
+          <label for="username">User Name:</label>
+          <input class="form-control" formControlName="username" id="username" type="text">
+          <!-- <div *ngIf="f.name.touched && f.name.invalid">
+             <small *ngIf="f.name.errors.required" class="text-danger">*Name is required.</small>
+           </div>-->
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-6 ">
+          <label for="mail">Email:</label>
+          <input class="form-control" formControlName="mail" id="mail" type="text">
+          <!-- <div *ngIf="f.detail.touched && f.detail.invalid">
+             <small *ngIf="f.detail.errors.required" class="text-danger">*Detail is required.</small>
+           </div>-->
+        </div>
+      </div>
+
+      <!--      <button [disabled]="!AddTaskForm.valid" class="btn btn-primary" type="submit"> &lt;!&ndash;[disabled]="!form.valid"&ndash;&gt;-->
+      <button  class="btn btn-primary" type="submit">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

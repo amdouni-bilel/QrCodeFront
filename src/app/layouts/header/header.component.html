@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg main-navbar sticky">
+  <div class="form-inline mr-auto">
+    <ul class="navbar-nav mr-3">
+      <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
+              collapse-btn"> <i data-feather="align-justify"></i></a></li>
+      <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
+        <i data-feather="maximize"></i>
+      </a></li>
+    </ul>
+  </div>
+  <ul class="navbar-nav navbar-right">
+
+    <li class="dropdown">
+      <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+        <img alt="image" src="assets/img/user.png" class="user-img-radious-style">
+        <span class="d-sm-none d-lg-inline-block"></span></a>
+      <div class="dropdown-menu dropdown-menu-right pullDown">
+<!--        <div class="dropdown-title">Bienvenue <br>{{NomUser}}</div>-->
+        <div class="dropdown-title">Bienvenue</div>
+        <div class="dropdown-divider"></div>
+<!--        <a class="dropdown-item has-icon text-dark" (click)="GoToProfile()" *ngIf="isSignedIn"> Profile<i-->
+        <a class="dropdown-item has-icon text-dark"> Profile<i
+          class="fas fa-product-hunt"></i></a>
+<!--        <a class="dropdown-item has-icon text-danger" (click)="signOut()" *ngIf="isSignedIn"> Logout<i  class="fas fa-sign-out-alt"></i></a>-->
+        <a class="dropdown-item has-icon text-danger"> Logout<i  class="fas fa-sign-out-alt"></i></a>
+      </div>
+    </li>
+
+  </ul>
+</nav>

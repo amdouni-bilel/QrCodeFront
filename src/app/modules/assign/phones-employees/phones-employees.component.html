@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-header">
+    <h4>List of phones assigned to employees</h4>
+    <div class="card-header-form">
+      <div class="input-group">
+        <button type="submit" class="btn btn-primary" (click)="exportExcel()">Export To Excel </button>
+        <input type="text" class="form-control"  placeholder="Search"> <!---->
+        <div class="input-group-btn">
+          <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table  id="customers" class="table table-striped" >
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>IMEI</th>
+          <th>USER</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let p of phones">
+          <td>{{p.idtel}}</td>
+          <td>{{p.nom}}</td>
+          <td>{{p.num}}</td>
+          <td>{{ p.person?.username || '---' }}</td>
+          <td width="170">
+            <button class="btn btn-info" [routerLink]="['../assign-phone-to-employee', p.idtel]">
+              <img src="assets/img/phoneuser.png" style="width: 11pt; height: 15pt;"></button>
+            <button class="btn btn-danger" (click)="deleteuser(p.idtel , p.person.idperson)"><i class="fas fa-trash"></i></button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

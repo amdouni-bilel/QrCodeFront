@@ -1,0 +1,78 @@
+<div class="card">
+  <div class="card-header">
+    <div class="card-header-form">
+      <div class="input-group">
+        <h4>Projects List</h4>
+        <select id="employee" name="employee" class="form-control" formControlName="employee_id"
+                style="border-radius: 4pt;">
+          <option value="">Please choose a employee</option>
+          <option *ngFor="let c of employee" value="{{c.idperson}}">{{c.username}}</option>
+        </select>
+
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-header">
+    <h4>Projects List</h4>
+    <div class="card-header-form">
+      <div class="input-group">
+        <button type="submit" class="btn btn-primary" (click)="exportExcel()">Export To Excel </button>
+        <input type="text" class="form-control"  placeholder="Search"> <!---->
+        <div class="input-group-btn">
+          <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table  id="customers" class="table table-striped" >
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th>latitude </th>
+          <th>longitude</th>
+          <th>Qrcode</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let p of projects">
+          <td>{{p.idpro}}</td>
+          <td>{{p.nom}}</td>
+          <td>{{p.description}}</td>
+          <td>{{p.date}}</td>
+          <td>{{p.latitude  }}</td>
+          <td>{{p.longitude }}</td>
+          <td>
+            <a [href]="qrCodeUrl" download="qrcode.png" *ngIf="qrCodeUrl">
+              Télécharger QR
+            </a>
+          </td>
+
+<!--          <qrcode [qrdata]="qrCodeValue" #qrcode></qrcode>-->
+
+      <!--  <td>   <img [src]="qrCodeUrl" alt="QR Code" *ngIf="qrCodeUrl" style="width: 40pt">
+            <a [href]="qrCodeUrl" download="qrcode.png" *ngIf="qrCodeUrl">
+              Télécharger QR
+            </a>
+          </td>-->
+
+
+          <td width="120">
+            <button class="btn btn-warning" [routerLink]="['../edit', p.idpro]"  ><i class="fas fa-edit"></i></button>
+<!--            <button class="btn btn-danger" ><i class="fas fa-trash"></i></button>-->
+           <button class="btn btn-danger" (click)="deleteProject(p.idpro)"><i class="fas fa-trash"></i></button>
+            <button class="btn btn-info" (click)="generateQRCode(p.idpro)">Générer QR</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

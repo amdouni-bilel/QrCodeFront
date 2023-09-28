@@ -1,0 +1,40 @@
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #424858;
+  color: white;
+}
+
+button{
+  margin-left: 5px;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.open-modal {
+  color: blue; /* Couleur du lien */
+  text-decoration: underline; /* Souligné pour ressembler à un lien */
+  cursor: pointer; /* Curseur de la main au survol pour indiquer que c'est cliquable */
+}

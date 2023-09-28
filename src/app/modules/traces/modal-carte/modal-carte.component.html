@@ -1,0 +1,12 @@
+<div class="modal" [ngClass]="{'is-active': afficherModal}">
+  <div class="modal-background" (click)="fermerCarte()"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Carte géographique</p>
+      <button class="delete" (click)="fermerCarte()"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Ici, affichez votre carte géographique en utilisant latitude et longitude -->
+    </section>
+  </div>
+</div>

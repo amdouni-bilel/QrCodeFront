@@ -1,0 +1,12 @@
+.main-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px; /* Marge intérieure pour le contenu du footer */
+  text-align: end; /* Centre le texte horizontalement */
+  display: flex;
+  align-items: center; /* Centre le contenu verticalement */
+  justify-content: center; /* Centre le contenu horizontalement */
+}
+
